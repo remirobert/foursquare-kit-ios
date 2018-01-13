@@ -1,6 +1,18 @@
 # foursquare-kit-ios
 
 Foursquare Kit is a easy way to use the Foursquare API in your apps. You can search for venues, get details and photos.
+Foursquare Kit is a very light framework without any dependencies, extensible, and tested.
+
+## Installation
+
+To add Foursquare Kit to your app, simply add **FoursquareKit** to your ```Podfile```.
+
+```
+target 'MyApp' do
+  use_frameworks!
+  pod 'FoursquareKit'
+end
+```
 
 ## Initialize a FoursquareClient instance
 

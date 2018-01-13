@@ -1,0 +1,97 @@
+{
+    "meta": {
+        "code": 200,
+        "requestId": "59a05a20f594df1fc392055d"
+    },
+    "response": {
+        "venues": [{
+                   "id": "59985efc6e465076273512cb",
+                   "name": "Smorg Square",
+                   "contact": {},
+                   "location": {
+                   "address": "Varick & Canal",
+                   "crossStreet": "b/t Canal St & Grand St",
+                   "lat": 40.72284,
+                   "lng": -74.00572,
+                   "labeledLatLngs": [{
+                                      "label": "display",
+                                      "lat": 40.72284,
+                                      "lng": -74.00572
+                                      }],
+                   "postalCode": "10013",
+                   "cc": "US",
+                   "city": "New York",
+                   "state": "NY",
+                   "country": "United States",
+                   "formattedAddress": [
+                                        "Varick & Canal (b/t Canal St & Grand St)",
+                                        "New York, NY 10013",
+                                        "United States"
+                                        ]
+                   },
+                   "categories": [{
+                                  "id": "53e0feef498e5aac066fd8a9",
+                                  "name": "Street Food Gathering",
+                                  "pluralName": "Street Food Gatherings",
+                                  "shortName": "Street Food Gathering",
+                                  "icon": {
+                                  "prefix": "https://ss3.4sqi.net/img/categories_v2/food/streetfood_",
+                                  "suffix": ".png"
+                                  },
+                                  "primary": true
+                                  }],
+                   "verified": false,
+                   "stats": {
+                   "checkinsCount": 98,
+                   "usersCount": 92,
+                   "tipCount": 0
+                   },
+                   "url": "https://www.smorgasburg.com/smorgasburg-varick/",
+                   "allowMenuUrlEdit": true,
+                   "beenHere": {
+                   "lastCheckinExpiredAt": 0
+                   },
+                   "hereNow": {
+                   "count": 16,
+                   "summary": "16 people are here",
+                   "groups": [{
+                              "type": "others",
+                              "name": "Other people here",
+                              "count": 16,
+                              "items": []
+                              }]
+                   }
+                   }],
+        "geocode": {
+            "what": "",
+            "where": "lower east side ny",
+            "feature": {
+                "cc": "US",
+                "name": "Lower East Side",
+                "displayName": "Lower East Side, NY, United States",
+                "matchedName": "Lower East Side, NY, United States",
+                "highlightedName": "<b>Lower East Side</b>, <b>NY</b>, United States",
+                "woeType": 22,
+                "id": "geonameid:5125409",
+                "longId": "72057594043053345",
+                "geometry": {
+                    "center": {
+                        "lat": 40.71594,
+                        "lng": -73.98681
+                    },
+                    "bounds": {
+                        "ne": {
+                            "lat": 40.7323150635,
+                            "lng": -73.9680099487
+                        },
+                        "sw": {
+                            "lat": 40.7053031921,
+                            "lng": -74.0015945435
+                        }
+                    }
+                }
+            },
+            "parents": []
+        }
+    }
+}

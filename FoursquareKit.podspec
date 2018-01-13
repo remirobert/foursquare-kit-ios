@@ -10,9 +10,6 @@ Pod::Spec.new do |s|
     s.source_files = 'FoursquareKit/**/*.{swift,h,m}'
     s.requires_arc = true
 
-    s.osx.deployment_target = '10.11'
     s.ios.deployment_target = '9.0'
-
-    s.osx.frameworks = 'Foundation'
     s.ios.frameworks = 'Foundation'
 end

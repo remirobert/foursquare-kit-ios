@@ -11,19 +11,26 @@ import Foundation
 class URLSessionMock: URLSession {
     private let data: Data?
     private let error: Error?
+    private let responseCode: Int
     private let dataTask: URLSessionDataTask
 
     init(data: Data?,
          error: Error?,
+         responseCode: Int,
          dataTask: URLSessionDataTask = URLSessionDataTaskStub()) {
         self.data = data
         self.error = error
+        self.responseCode = responseCode
         self.dataTask = dataTask
     }
 
     override func dataTask(with request: URLRequest,
                            completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        completionHandler(self.data, nil, self.error)
+        let response = HTTPURLResponse(url: request.url!,
+                                       statusCode: responseCode,
+                                       httpVersion: nil,
+                                       headerFields: nil)
+        completionHandler(self.data, response, self.error)
         return dataTask
     }
 }
@@ -37,3 +44,4 @@ class URLSessionDataTaskStub: URLSessionDataTask {
         isCanceled = true
     }
 }
+

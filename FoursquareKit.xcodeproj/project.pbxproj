@@ -38,6 +38,10 @@
 		BB53CD152009B6C9006AC938 /* searchTrendingVenues.json in Resources */ = {isa = PBXBuildFile; fileRef = BB53CD112009B6C9006AC938 /* searchTrendingVenues.json */; };
 		BB53CD162009B6C9006AC938 /* venuePhotos.json in Resources */ = {isa = PBXBuildFile; fileRef = BB53CD122009B6C9006AC938 /* venuePhotos.json */; };
 		BB53CD172009B6C9006AC938 /* venueDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = BB53CD132009B6C9006AC938 /* venueDetails.json */; };
+		BB53CD22200A3277006AC938 /* Data+FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CD20200A3276006AC938 /* Data+FakeData.swift */; };
+		BB53CD23200A3277006AC938 /* responseError.json in Resources */ = {isa = PBXBuildFile; fileRef = BB53CD21200A3276006AC938 /* responseError.json */; };
+		BB53CD26200A335C006AC938 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CD24200A335B006AC938 /* ResponseError.swift */; };
+		BB53CD27200A335C006AC938 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CD25200A335B006AC938 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +89,10 @@
 		BB53CD112009B6C9006AC938 /* searchTrendingVenues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = searchTrendingVenues.json; sourceTree = "<group>"; };
 		BB53CD122009B6C9006AC938 /* venuePhotos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = venuePhotos.json; sourceTree = "<group>"; };
 		BB53CD132009B6C9006AC938 /* venueDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = venueDetails.json; sourceTree = "<group>"; };
+		BB53CD20200A3276006AC938 /* Data+FakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+FakeData.swift"; sourceTree = "<group>"; };
+		BB53CD21200A3276006AC938 /* responseError.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseError.json; sourceTree = "<group>"; };
+		BB53CD24200A335B006AC938 /* ResponseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		BB53CD25200A335B006AC938 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +162,8 @@
 		BB53CCDE2009B621006AC938 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BB53CD25200A335B006AC938 /* APIError.swift */,
+				BB53CD24200A335B006AC938 /* ResponseError.swift */,
 				BB53CCDF2009B621006AC938 /* Location.swift */,
 				BB53CCE02009B621006AC938 /* VenuePhotos.swift */,
 				BB53CCE12009B621006AC938 /* Venue.swift */,
@@ -202,6 +212,8 @@
 		BB53CD0F2009B6BE006AC938 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				BB53CD20200A3276006AC938 /* Data+FakeData.swift */,
+				BB53CD21200A3276006AC938 /* responseError.json */,
 				BB53CD112009B6C9006AC938 /* searchTrendingVenues.json */,
 				BB53CD102009B6C9006AC938 /* searchVenues.json */,
 				BB53CD132009B6C9006AC938 /* venueDetails.json */,
@@ -316,6 +328,7 @@
 				BB53CD142009B6C9006AC938 /* searchVenues.json in Resources */,
 				BB53CD172009B6C9006AC938 /* venueDetails.json in Resources */,
 				BB53CD162009B6C9006AC938 /* venuePhotos.json in Resources */,
+				BB53CD23200A3277006AC938 /* responseError.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +345,7 @@
 				BB53CCF02009B621006AC938 /* SearchRoutes.swift in Sources */,
 				BB53CD002009B621006AC938 /* APIRequestDescriptor.swift in Sources */,
 				BB53CCEF2009B621006AC938 /* RequestProducer.swift in Sources */,
+				BB53CD26200A335C006AC938 /* ResponseError.swift in Sources */,
 				BB53CCEE2009B621006AC938 /* Request.swift in Sources */,
 				BB53CCF62009B621006AC938 /* Venue.swift in Sources */,
 				BB53CCF82009B621006AC938 /* Response.swift in Sources */,
@@ -346,6 +360,7 @@
 				BB53CCFC2009B621006AC938 /* SearchResponseDetail.swift in Sources */,
 				BB53CCF22009B621006AC938 /* VenueRoutes.swift in Sources */,
 				BB53CCFB2009B621006AC938 /* VenueCategory.swift in Sources */,
+				BB53CD27200A335C006AC938 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +370,7 @@
 			files = (
 				BB53CD0D2009B6B2006AC938 /* URLSessionMock.swift in Sources */,
 				BB53CD0A2009B6AD006AC938 /* RequestProducerTests.swift in Sources */,
+				BB53CD22200A3277006AC938 /* Data+FakeData.swift in Sources */,
 				BB53CD0E2009B6B2006AC938 /* VenueRoutesTests.swift in Sources */,
 				BB53CD082009B6AD006AC938 /* RequestTests.swift in Sources */,
 				BB53CD092009B6AD006AC938 /* SearchRoutesTests.swift in Sources */,

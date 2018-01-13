@@ -22,7 +22,7 @@ class RequestTests: XCTestCase {
     }
 
     func testWithError() {
-        let urlSessionMock = URLSessionMock(data: nil, error: NetworkErrorTest.error)
+        let urlSessionMock = URLSessionMock(data: nil, error: NetworkErrorTest.error, responseCode: 200)
         let request = Request<ModelStub>(session: urlSessionMock, request: fakeRequest)
 
         var errorResponse: Error?
@@ -42,7 +42,7 @@ class RequestTests: XCTestCase {
     }
 
     func testWithNoData() {
-        let urlSessionMock = URLSessionMock(data: nil, error: nil)
+        let urlSessionMock = URLSessionMock(data: nil, error: nil, responseCode: 200)
         let request = Request<ModelStub>(session: urlSessionMock, request: fakeRequest)
 
         var errorNoData = false
@@ -62,7 +62,7 @@ class RequestTests: XCTestCase {
 
     func testWithValidData() {
         let data = "{\"city\":\"Paris\"}".data(using: String.Encoding.utf8)
-        let urlSessionMock = URLSessionMock(data: data, error: nil)
+        let urlSessionMock = URLSessionMock(data: data, error: nil, responseCode: 200)
         let request = Request<ModelStub>(session: urlSessionMock, request: fakeRequest)
 
         var modelResponse: ModelStub?
@@ -76,8 +76,33 @@ class RequestTests: XCTestCase {
         XCTAssertNotNil(modelResponse)
         XCTAssertEqual(modelResponse!.city, "Paris")
     }
+
+    func testWithAPIError() {
+        let data = Data.from(localRessource: "responseError")
+        let urlSessionMock = URLSessionMock(data: data, error: nil, responseCode: 400)
+        let request = Request<ModelStub>(session: urlSessionMock, request: fakeRequest)
+
+        var apiError: APIError?
+        request.response { result in
+            print(result)
+            switch result {
+            case .failure(let error):
+                switch error {
+                case .apiError(let responseError):
+                    apiError = responseError.error
+                default: break
+                }
+            default: break
+            }
+        }
+        XCTAssertNotNil(apiError)
+        XCTAssertEqual(apiError!.code, 400)
+        XCTAssertEqual(apiError!.errorDetail, "Value abc is invalid for venue id")
+        XCTAssertEqual(apiError!.errorType, "param_error")
+    }
 }
 
 private class ModelStub: Codable {
     let city: String
 }
+

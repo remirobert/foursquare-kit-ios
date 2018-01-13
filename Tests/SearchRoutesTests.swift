@@ -18,10 +18,8 @@ class SearchRoutesTests: XCTestCase {
     }
 
     func testSearchVenues() {
-        let path = Bundle(for: SearchRoutesTests.self).path(forResource: "searchVenues", ofType: "json")
-        let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
-
-        let urlSessionMock = URLSessionMock(data: data, error: nil)
+        let data = Data.from(localRessource: "searchVenues")
+        let urlSessionMock = URLSessionMock(data: data, error: nil, responseCode: 200)
         let client = FoursquareClient(authentification: authentificationFake, urlSession: urlSessionMock)
 
         var responseVenues: [Venue]?
@@ -39,10 +37,8 @@ class SearchRoutesTests: XCTestCase {
     }
 
     func testSearchTrendingVenues() {
-        let path = Bundle(for: SearchRoutesTests.self).path(forResource: "searchTrendingVenues", ofType: "json")
-        let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
-
-        let urlSessionMock = URLSessionMock(data: data, error: nil)
+        let data = Data.from(localRessource: "searchTrendingVenues")
+        let urlSessionMock = URLSessionMock(data: data, error: nil, responseCode: 200)
         let client = FoursquareClient(authentification: authentificationFake, urlSession: urlSessionMock)
 
         var responseVenues: [Venue]?
@@ -57,3 +53,4 @@ class SearchRoutesTests: XCTestCase {
         XCTAssertTrue(responseVenues!.count == 1)
     }
 }
+

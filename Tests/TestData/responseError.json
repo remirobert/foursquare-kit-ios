@@ -1,0 +1,8 @@
+{
+    "meta": {
+        "code": 400,
+        "errorDetail": "Value abc is invalid for venue id",
+        "errorType": "param_error",
+        "requestId": "5a59f55cf594df1cf5780f3e",
+    }
+}

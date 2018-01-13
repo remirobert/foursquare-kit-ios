@@ -22,6 +22,8 @@ public class Request<T: Codable> {
 
     public enum Error {
         case noData
+        case invalidResponse
+        case apiError(ResponseError)
         case requestError(Swift.Error)
         case parsingError(Swift.Error)
     }
@@ -37,6 +39,10 @@ public class Request<T: Codable> {
 
     @discardableResult public func response(completion: @escaping CompletionResponse) -> Self {
         task = session.dataTask(with: request) { data, response, error in
+            guard let response = response as? HTTPURLResponse  else {
+                completion(Result.failure(.invalidResponse))
+                return
+            }
             if let error = error {
                 completion(Result.failure(.requestError(error)))
                 return
@@ -45,11 +51,15 @@ public class Request<T: Codable> {
                 completion(Result.failure(.noData))
                 return
             }
-
             let jsonDecoder = JSONDecoder()
             do {
-                let response = try jsonDecoder.decode(T.self, from: data)
-                completion(Result.success(response))
+                if response.statusCode == 200 {
+                    let response = try jsonDecoder.decode(T.self, from: data)
+                    completion(Result.success(response))
+                } else {
+                    let responseError = try jsonDecoder.decode(ResponseError.self, from: data)
+                    completion(Result.failure(.apiError(responseError)))
+                }
             } catch {
                 completion(Result.failure(.parsingError(error)))
             }
@@ -58,3 +68,4 @@ public class Request<T: Codable> {
         return self
     }
 }
+

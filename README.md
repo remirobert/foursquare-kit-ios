@@ -1,2 +1,73 @@
 # foursquare-kit-ios
-Foursquare Kit is a native SDK to include Foursquare API inside mobile apps.
+
+Foursquare Kit is a easy way to use the Foursquare API in your apps. You can search for venues, get details and photos.
+
+## Initialize a FoursquareClient instance
+
+You can authentificate to the Foursquare API with **client_id / client_secret** or with a **token**.
+
+```Swift
+import FoursquareKit
+
+class RestaurantsViewController: UIViewController {
+  override viewDidLoad() {
+    super.viewDidLoad()
+    let auth = Authentification(clientId: "123", clientSecret: "456")
+    let client = FoursquareClient(authentification: auth)
+  }
+}
+```
+
+## Performing API requests
+
+Start by creating a reference to the **FoursquareClient** instance that you will use to make your API calls.
+
+Searching for venues (documentation https://developer.foursquare.com/docs/api/venues/search):
+```Swift
+let parameters = ["ll" : "44.3,37.2"]
+client.search.venues(parameters: parameters).response { result in
+  switch result {
+    case .success(let data):
+      venues = data.response.venues
+    case .failure(let error):
+      print("error : \(error)")
+  }
+}
+```
+
+Searching for trending venues (documentation https://developer.foursquare.com/docs/api/venues/trending):
+```Swift
+let parameters = ["ll" : "44.3,37.2"]
+client.search.trending(parameters: parameters).response { result in
+  switch result {
+    case .success(let data):
+      venues = data.response.venues
+    case .failure(let error):
+      print("error : \(error)")
+  }
+}
+```
+
+Get details for a venue (documentation https://developer.foursquare.com/docs/api/venues/details):
+```Swift
+client.venue.details(id: "123").response { result in
+  switch result {
+    case .success(let data):
+      venue = data.response.venue
+    case .failure(let error):
+      print("error : \(error)")
+  }
+}
+```
+
+Get photos for a venue (documentation https://developer.foursquare.com/docs/api/venues/photos):
+```Swift
+client.venue.photos(id: "123").response { result in
+  switch result {
+    case .success(let data):
+      photos = data.response.photos.items
+    case .failure(let error):
+      print("error : \(error)")
+  }
+}
+```

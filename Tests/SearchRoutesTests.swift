@@ -22,7 +22,7 @@ class SearchRoutesTests: XCTestCase {
         let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
 
         let urlSessionMock = URLSessionMock(data: data, error: nil)
-        let client = Client(authentification: authentificationFake, urlSession: urlSessionMock)
+        let client = FoursquareClient(authentification: authentificationFake, urlSession: urlSessionMock)
 
         var responseVenues: [Venue]?
         client.search.venues(parameters: [:]).response { result in
@@ -43,7 +43,7 @@ class SearchRoutesTests: XCTestCase {
         let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
 
         let urlSessionMock = URLSessionMock(data: data, error: nil)
-        let client = Client(authentification: authentificationFake, urlSession: urlSessionMock)
+        let client = FoursquareClient(authentification: authentificationFake, urlSession: urlSessionMock)
 
         var responseVenues: [Venue]?
         client.search.trending(parameters: [:]).response { result in

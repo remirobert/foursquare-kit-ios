@@ -22,7 +22,7 @@ class VenueRoutesTests: XCTestCase {
         let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
 
         let urlSessionMock = URLSessionMock(data: data, error: nil)
-        let client = Client(authentification: authentificationFake, urlSession: urlSessionMock)
+        let client = FoursquareClient(authentification: authentificationFake, urlSession: urlSessionMock)
 
         var venue: Venue?
         client.venue.details(id: "123").response { result in
@@ -54,7 +54,7 @@ class VenueRoutesTests: XCTestCase {
         let data = try! Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
 
         let urlSessionMock = URLSessionMock(data: data, error: nil)
-        let client = Client(authentification: authentificationFake, urlSession: urlSessionMock)
+        let client = FoursquareClient(authentification: authentificationFake, urlSession: urlSessionMock)
 
         var photos: [Photo]?
         client.venue.photos(id: "123").response { result in

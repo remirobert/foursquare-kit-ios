@@ -10,7 +10,7 @@
 		BB53CCC12009B5D3006AC938 /* FoursquareKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BB53CCBF2009B5D3006AC938 /* FoursquareKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB53CCD02009B600006AC938 /* FoursquareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB53CCBC2009B5D3006AC938 /* FoursquareKit.framework */; };
 		BB53CCEC2009B621006AC938 /* Authentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CCD62009B620006AC938 /* Authentification.swift */; };
-		BB53CCED2009B621006AC938 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CCD72009B620006AC938 /* Client.swift */; };
+		BB53CCED2009B621006AC938 /* FoursquareClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CCD72009B620006AC938 /* FoursquareClient.swift */; };
 		BB53CCEE2009B621006AC938 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CCD82009B620006AC938 /* Request.swift */; };
 		BB53CCEF2009B621006AC938 /* RequestProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CCD92009B620006AC938 /* RequestProducer.swift */; };
 		BB53CCF02009B621006AC938 /* SearchRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CCDA2009B620006AC938 /* SearchRoutes.swift */; };
@@ -57,7 +57,7 @@
 		BB53CCCB2009B600006AC938 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB53CCCF2009B600006AC938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB53CCD62009B620006AC938 /* Authentification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentification.swift; sourceTree = "<group>"; };
-		BB53CCD72009B620006AC938 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		BB53CCD72009B620006AC938 /* FoursquareClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareClient.swift; sourceTree = "<group>"; };
 		BB53CCD82009B620006AC938 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		BB53CCD92009B620006AC938 /* RequestProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProducer.swift; sourceTree = "<group>"; };
 		BB53CCDA2009B620006AC938 /* SearchRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRoutes.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				BB53CCD62009B620006AC938 /* Authentification.swift */,
-				BB53CCD72009B620006AC938 /* Client.swift */,
+				BB53CCD72009B620006AC938 /* FoursquareClient.swift */,
 				BB53CCEA2009B621006AC938 /* Client+Constants.swift */,
 				BB53CCDB2009B620006AC938 /* ClientBase.swift */,
 			);
@@ -328,7 +328,7 @@
 			files = (
 				BB53CCF92009B621006AC938 /* SearchResponse.swift in Sources */,
 				BB53CCF72009B621006AC938 /* Photo.swift in Sources */,
-				BB53CCED2009B621006AC938 /* Client.swift in Sources */,
+				BB53CCED2009B621006AC938 /* FoursquareClient.swift in Sources */,
 				BB53CCF02009B621006AC938 /* SearchRoutes.swift in Sources */,
 				BB53CD002009B621006AC938 /* APIRequestDescriptor.swift in Sources */,
 				BB53CCEF2009B621006AC938 /* RequestProducer.swift in Sources */,

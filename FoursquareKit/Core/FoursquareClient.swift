@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Client: ClientBase {
+public class FoursquareClient: ClientBase {
     public convenience init(authentification: ClientAuthentificable,
                             urlSession: URLSession = .shared) {
         let requestProducer = RequestProducer(authentification: authentification)

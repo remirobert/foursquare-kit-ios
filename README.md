@@ -1,7 +1,7 @@
 # foursquare-kit-ios
 
 Foursquare Kit is a easy way to use the Foursquare API in your apps. You can search for venues, get details and photos.
-Foursquare Kit is a very light framework without any dependencies, extensible, and tested.
+It's a very light framework without any dependencies, extensible, and tested. It doesn't cover all the APIs yet. If you have a specific need, please be free to open an issue, or a pull request.
 
 ## Installation
 

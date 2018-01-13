@@ -1,3 +1,5 @@
+![](https://pbs.twimg.com/media/CEKwK7HUIAAxuF1.png)
+
 # foursquare-kit-ios
 
 Foursquare Kit is a easy way to use the Foursquare API in your apps. You can search for venues, get details and photos.

@@ -97,3 +97,31 @@ let request = client.venue.photos(id: "123").response { result in
 }
 request.cancel()
 ```
+
+## Cache
+
+You can add a cache strategy for each Request, to allow to get the data from local storage.
+Foursquare Kit was designed with no external dependency. Foursquare Kit can works with any cache libraries.
+
+For doing that, your cache implementation has to conform to the protocol **Cachable**.
+Then calling the cache function and pass the **Cachable object**.
+
+Here an example for PINCache:
+```Swift
+extension PINCache: FoursquareKit.Cachable {
+  func data(forKey key: String, completion: ((Data?) -> Swift.Void)) {
+    self.object(forKey: key) { (_, _, object) in
+      completion(object as? Data)
+    }
+  }
+  
+  func set(data: Data, forKey key: String) {
+    self.setObject(data, forKey: key)
+  }
+}
+
+let request = client.venue.photos(id: "123").cache(PINCache.shared).response { result in
+  //...
+}
+
+```

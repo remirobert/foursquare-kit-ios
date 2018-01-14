@@ -120,7 +120,10 @@ extension PINCache: FoursquareKit.Cachable {
   }
 }
 
-let request = client.venue.photos(id: "123").cache(PINCache.shared).response { result in
+let request = client.venue.photos(id: "123")
+request
+  .cache(PINCache.shared)
+  .response { result in
   //...
 }
 

@@ -88,16 +88,6 @@ client.venue.photos(id: "123").response { result in
 }
 ```
 
-## Cancelling a request
-
-All the API calls will return a ```Request<T: Codable>``` object, simply call the ```cancel``` function to cancel the network call.
-```Swift
-let request = client.venue.photos(id: "123").response { result in
-  //...
-}
-request.cancel()
-```
-
 ## Cache
 
 You can add a cache strategy for each Request, to allow to get the data from local storage.
@@ -127,4 +117,15 @@ request
   //...
 }
 
+```
+
+
+## Cancelling a request
+
+All the API calls will return a ```Request<T: Codable>``` object, simply call the ```cancel``` function to cancel the network call.
+```Swift
+let request = client.venue.photos(id: "123").response { result in
+  //...
+}
+request.cancel()
 ```

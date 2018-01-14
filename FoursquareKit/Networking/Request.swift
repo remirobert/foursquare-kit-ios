@@ -45,11 +45,6 @@ public class Request<T: Codable> {
     }
 
     @discardableResult public func response(completion: @escaping CompletionResponse) -> Self {
-        if let cache = cache,
-            let data = cache.data(forKey: request.url!.absoluteString),
-            let response = try? jsonDecoder.decode(T.self, from: data) {
-            completion(Result.success(response))
-        }
         task = session.dataTask(with: request) { data, response, error in
             guard let response = response as? HTTPURLResponse  else {
                 completion(Result.failure(.invalidResponse))
@@ -76,8 +71,21 @@ public class Request<T: Codable> {
                 completion(Result.failure(.parsingError(error)))
             }
         }
+        loadCache(completion: completion)
         task!.resume()
         return self
+    }
+
+    private func loadCache(completion: @escaping CompletionResponse) {
+        if let cache = cache {
+            cache.data(forKey: request.url!.absoluteString) { data in
+                if let data = data, let response = try? jsonDecoder.decode(T.self, from: data) {
+                    if task!.state == .running || task!.state == .suspended {
+                        completion(Result.success(response))
+                    }
+                }
+            }
+        }
     }
 }
 

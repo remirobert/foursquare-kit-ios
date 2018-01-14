@@ -57,7 +57,6 @@ class CacheTests: XCTestCase {
         XCTAssertEqual(responses.count, 2)
         XCTAssertEqual(responses[0].city, "London")
         XCTAssertEqual(responses[1].city, "Paris")
-
         XCTAssertNotNil(cacheMock.dataSetted)
         XCTAssertEqual(cacheMock.getCacheKey, "https://foursquare.com")
         XCTAssertEqual(cacheMock.setCacheKey, "https://foursquare.com")
@@ -75,9 +74,9 @@ private class CacheMock: Cachable {
         self.cachedData = cachedData
     }
 
-    func data(forKey key: String) -> Data? {
+    func data(forKey key: String, completion: ((Data?) -> Void)) {
         self.getCacheKey = key
-        return cachedData
+        completion(cachedData)
     }
 
     func set(data: Data, forKey key: String) {

@@ -12,12 +12,12 @@ class URLSessionMock: URLSession {
     private let data: Data?
     private let error: Error?
     private let responseCode: Int
-    private let dataTask: URLSessionDataTask
+    private let dataTask: URLSessionDataTaskStub
 
     init(data: Data?,
          error: Error?,
          responseCode: Int,
-         dataTask: URLSessionDataTask = URLSessionDataTaskStub()) {
+         dataTask: URLSessionDataTaskStub = URLSessionDataTaskStub()) {
         self.data = data
         self.error = error
         self.responseCode = responseCode
@@ -30,15 +30,24 @@ class URLSessionMock: URLSession {
                                        statusCode: responseCode,
                                        httpVersion: nil,
                                        headerFields: nil)
-        completionHandler(self.data, response, self.error)
+        dataTask.didResumed = {
+            completionHandler(self.data, response, self.error)
+        }
         return dataTask
     }
 }
 
 class URLSessionDataTaskStub: URLSessionDataTask {
+    var didResumed: (() -> Swift.Void)?
     private(set) var isCanceled = false
 
-    override func resume() {}
+    override var state: URLSessionTask.State {
+        return isCanceled ? .canceling : .running
+    }
+
+    override func resume() {
+        didResumed?()
+    }
 
     override func cancel() {
         isCanceled = true

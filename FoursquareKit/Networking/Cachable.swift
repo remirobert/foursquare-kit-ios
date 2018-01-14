@@ -7,6 +7,6 @@
 //
 
 public protocol Cachable {
-    func data(forKey key: String) -> Data?
+    func data(forKey key: String, completion: ((Data?) -> Swift.Void))
     func set(data: Data, forKey key: String)
 }

@@ -1,8 +1,0 @@
-branches:
-  only:
-    - master
-language: swift
-os: osx
-osx_image: xcode9
-script:
-- xcodebuild -project FoursquareKit.xcodeproj -scheme "FoursquareKit" -destination "platform=iOS Simulator,name=iphone 8" -sdk iphonesimulator build test

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB3C1016200B3EFF00479EF0 /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1015200B3EFF00479EF0 /* Cachable.swift */; };
+		BB3C1018200B43B200479EF0 /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1017200B43B200479EF0 /* CacheTests.swift */; };
+		BB3C101A200B477400479EF0 /* ModelStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C1019200B477400479EF0 /* ModelStub.swift */; };
 		BB53CCC12009B5D3006AC938 /* FoursquareKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BB53CCBF2009B5D3006AC938 /* FoursquareKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB53CCD02009B600006AC938 /* FoursquareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB53CCBC2009B5D3006AC938 /* FoursquareKit.framework */; };
 		BB53CCEC2009B621006AC938 /* Authentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53CCD62009B620006AC938 /* Authentification.swift */; };
@@ -55,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB3C1015200B3EFF00479EF0 /* Cachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		BB3C1017200B43B200479EF0 /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
+		BB3C1019200B477400479EF0 /* ModelStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStub.swift; sourceTree = "<group>"; };
 		BB53CCBC2009B5D3006AC938 /* FoursquareKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FoursquareKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB53CCBF2009B5D3006AC938 /* FoursquareKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoursquareKit.h; sourceTree = "<group>"; };
 		BB53CCC02009B5D3006AC938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 				BB53CD052009B6AD006AC938 /* RequestTests.swift */,
 				BB53CD062009B6AD006AC938 /* SearchRoutesTests.swift */,
 				BB53CD0C2009B6B2006AC938 /* VenueRoutesTests.swift */,
+				BB3C1017200B43B200479EF0 /* CacheTests.swift */,
 				BB53CCCF2009B600006AC938 /* Info.plist */,
 			);
 			path = Tests;
@@ -194,6 +201,7 @@
 				BB53CCD82009B620006AC938 /* Request.swift */,
 				BB53CCD92009B620006AC938 /* RequestProducer.swift */,
 				BB53CCEB2009B621006AC938 /* APIRequestDescriptor.swift */,
+				BB3C1015200B3EFF00479EF0 /* Cachable.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				BB53CD20200A3276006AC938 /* Data+FakeData.swift */,
+				BB3C1019200B477400479EF0 /* ModelStub.swift */,
 				BB53CD21200A3276006AC938 /* responseError.json */,
 				BB53CD112009B6C9006AC938 /* searchTrendingVenues.json */,
 				BB53CD102009B6C9006AC938 /* searchVenues.json */,
@@ -345,6 +354,7 @@
 				BB53CCF02009B621006AC938 /* SearchRoutes.swift in Sources */,
 				BB53CD002009B621006AC938 /* APIRequestDescriptor.swift in Sources */,
 				BB53CCEF2009B621006AC938 /* RequestProducer.swift in Sources */,
+				BB3C1016200B3EFF00479EF0 /* Cachable.swift in Sources */,
 				BB53CD26200A335C006AC938 /* ResponseError.swift in Sources */,
 				BB53CCEE2009B621006AC938 /* Request.swift in Sources */,
 				BB53CCF62009B621006AC938 /* Venue.swift in Sources */,
@@ -369,8 +379,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB53CD0D2009B6B2006AC938 /* URLSessionMock.swift in Sources */,
+				BB3C101A200B477400479EF0 /* ModelStub.swift in Sources */,
 				BB53CD0A2009B6AD006AC938 /* RequestProducerTests.swift in Sources */,
 				BB53CD22200A3277006AC938 /* Data+FakeData.swift in Sources */,
+				BB3C1018200B43B200479EF0 /* CacheTests.swift in Sources */,
 				BB53CD0E2009B6B2006AC938 /* VenueRoutesTests.swift in Sources */,
 				BB53CD082009B6AD006AC938 /* RequestTests.swift in Sources */,
 				BB53CD092009B6AD006AC938 /* SearchRoutesTests.swift in Sources */,

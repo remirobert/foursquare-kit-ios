@@ -102,7 +102,3 @@ class RequestTests: XCTestCase {
     }
 }
 
-private class ModelStub: Codable {
-    let city: String
-}
-
